@@ -1,0 +1,3 @@
+[InputFile]
+regionFile=C:\Users\bharbs\Desktop\python\region.csv
+credentialFile=C:\Users\bharbs\Desktop\python\credentials.csv
