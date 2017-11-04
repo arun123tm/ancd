@@ -1,0 +1,31 @@
+import boto.ec2
+
+REGION = 'us-east-2'
+conn = boto.ec2.connect_to_region(REGION,aws_access_key_id="AKIAJY7U4LMWCBRKZKCA",aws_secret_access_key="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")
+
+def main():
+		res = conn.get_all_instances()
+
+		instances = [i for r in res for i in r.instances]
+		print instances
+		vol = conn.get_all_volumes()
+
+
+		#volumes = conn.get_all_volumes()
+
+		for volume in vol:
+			print volume
+
+        # Match to an instance id
+			print volume.attach_data.instance_id
+
+        # # Object attributes:
+        # print volume.__dict__
+
+        # # Object methods:
+        # print(dir(volume))
+
+
+
+if __name__ == '__main__':
+    main()
